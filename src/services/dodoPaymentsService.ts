@@ -148,7 +148,9 @@ export class DodoPaymentsService {
   static async enqueueWebhook(rawBody: Buffer, headers: Record<string, string>, eventId: string): Promise<void> {
     let event: DodoWebhookEvent;
     try {
-      event = dodoClient().webhooks.unwrap(rawBody.toString("utf8"), { headers }) as DodoWebhookEvent;
+      // The SDK exposes a discriminated union for the webhook payload. We
+      // validate the shared fields immediately below before persisting it.
+      event = dodoClient().webhooks.unwrap(rawBody.toString("utf8"), { headers }) as unknown as DodoWebhookEvent;
     } catch {
       throw new AppError("Invalid Dodo webhook signature or payload.", 400);
     }
