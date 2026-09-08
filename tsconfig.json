@@ -1,0 +1,68 @@
+{
+  "compilerOptions": {
+    /* ==========================================================
+       Language
+    ========================================================== */
+    "target": "ES2022",
+    "lib": ["ES2022"],
+
+    /* ==========================================================
+       Modules
+    ========================================================== */
+    "module": "Node16",
+"moduleResolution": "Node16",
+    /* ==========================================================
+       Paths
+    ========================================================== */
+    "rootDir": "./src",
+    "outDir": "./dist",
+
+    /* ==========================================================
+       Strictness
+    ========================================================== */
+    "strict": true,
+    "noImplicitAny": true,
+    "strictNullChecks": true,
+    "strictFunctionTypes": true,
+    "strictBindCallApply": true,
+    "strictPropertyInitialization": true,
+    "noImplicitThis": true,
+    "alwaysStrict": true,
+
+    /* ==========================================================
+       Imports
+    ========================================================== */
+    "esModuleInterop": true,
+    "allowSyntheticDefaultImports": true,
+    "resolveJsonModule": true,
+
+    /* ==========================================================
+       Build
+    ========================================================== */
+    "sourceMap": true,
+    "removeComments": false,
+    "declaration": false,
+    "incremental": true,
+    "skipLibCheck": true,
+
+    /* ==========================================================
+       Type Checking
+    ========================================================== */
+    "forceConsistentCasingInFileNames": true,
+    "isolatedModules": true,
+
+    /* ==========================================================
+       Node Types
+    ========================================================== */
+    "types": ["node"]
+  },
+
+  "include": [
+    "src/**/*.ts"
+  ],
+
+  "exclude": [
+    "node_modules",
+    "dist"
+  ]
+}

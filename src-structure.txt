@@ -1,0 +1,181 @@
+Folder PATH listing for volume OS
+Volume serial number is 000001F8 C468:176B
+C:\USERS\WIN11\PROJECTS\AI-RECEPTIONIST-BACKEND\SRC
+|   app.ts
+|   server.ts
+|   
++---config
+|       env.ts
+|       google.ts
+|       googleOAuth.ts
+|       supabase.ts
+|       
++---constants
+|       bookingStatus.ts
+|       
++---controllers
+|       agentController.ts
+|       aiController.ts
+|       authController.ts
+|       bookingController.ts
+|       businessSettingsController.ts
+|       clientController.ts
+|       googleController.ts
+|       
++---errors
+|       AppError.ts
+|       
++---helpers
+|       dateTimeHelper.ts
+|       googleCalendar.ts
+|       jwt.ts
+|       password.ts
+|       
++---middlewares
+|       asyncHandler.ts
+|       authMiddleware.ts
+|       errorHandler.ts
+|       validationMiddleware.ts
+|       
++---prompts
+|       availabilityPrompt.ts
+|       bookingPrompt.ts
+|       cancelPrompt.ts
+|       intentPrompt.ts
+|       reschedulePrompt.ts
+|       
++---repositories
+|       appointmentRepository.ts
+|       authRepository.ts
+|       bookingRepository.ts
+|       businessRepository.ts
+|       businessSettingsRepository.ts
+|       clientRepository.ts
+|       googleRepository.ts
+|       
++---routes
+|       agentRoutes.ts
+|       aiRoutes.ts
+|       authRoutes.ts
+|       bookingRoutes.ts
+|       businessSettingsRoutes.ts
+|       clientRoutes.ts
+|       googleRoutes.ts
+|       index.ts
+|       
++---services
+|   |   authService.ts
+|   |   businessHoursService.ts
+|   |   dateTimeService.ts
+|   |   servicesService.ts
+|   |   
+|   +---agents
+|   |       agentService.ts
+|   |       
+|   +---ai
+|   |       availabilityAIService.ts
+|   |       baseAIService.ts
+|   |       bookingAIService.ts
+|   |       cancelAIService.ts
+|   |       geminiService.ts
+|   |       intentClassifierService.ts
+|   |       rescheduleAIService.ts
+|   |       
+|   +---availability
+|   |       availabilityService.ts
+|   |       conflictDetector.ts
+|   |       overlapService.ts
+|   |       scheduleValidator.ts
+|   |       suggestionService.ts
+|   |       
+|   +---booking
+|   |       availabilityService.ts
+|   |       bookingService.ts
+|   |       cancelBookingService.ts
+|   |       rescheduleBookingService.ts
+|   |       
+|   +---business
+|   |       businessSettingsService.ts
+|   |       
+|   +---clients
+|   |       clientService.ts
+|   |       
+|   +---google
+|   |   |   googleCalendarService.ts
+|   |   |   googleService.ts
+|   |   |   googleSheetsService.ts
+|   |   |   oauthService.ts
+|   |   |   tokenManager.ts
+|   |   |   
+|   |   +---builders
+|   |   |       eventBuilder.ts
+|   |   |       
+|   |   \---types
+|   |           calendarTypes.ts
+|   |           
+|   +---parsers
+|   |       jsonParserService.ts
+|   |       
+|   \---validators
+|           aiValidator.ts
+|           authValidator.ts
+|           bookingValidator.ts
+|           businessSettingsValidator.ts
+|           clientValidator.ts
+|           
++---tools
+|   +---availability
+|   |       availabilitySchemas.ts
+|   |       availabilityTool.ts
+|   |       
+|   +---booking
+|   |       bookingSchemas.ts
+|   |       bookingTool.ts
+|   |       
+|   +---business
+|   |       businessSchemas.ts
+|   |       businessTool.ts
+|   |       
+|   +---cancel
+|   |       cancelSchemas.ts
+|   |       cancelTool.ts
+|   |       
+|   +---faq
+|   |       faqTool.ts
+|   |       
+|   +---reschedule
+|   |       rescheduleSchemas.ts
+|   |       rescheduleTool.ts
+|   |       
+|   \---services
+|           servicesSchemas.ts
+|           servicesTool.ts
+|           
++---types
+|   |   agent.ts
+|   |   availability.ts
+|   |   availabilityResult.ts
+|   |   booking.ts
+|   |   bookingResult.ts
+|   |   businessSettings.ts
+|   |   client.ts
+|   |   express.d.ts
+|   |   google.ts
+|   |   tool.ts
+|   |   user.ts
+|   |   
+|   \---ai
+|           aiExtractionResult.ts
+|           aiRequest.ts
+|           availabilityAI.ts
+|           bookingAI.ts
+|           cancelAI.ts
+|           intent.ts
+|           rescheduleAI.ts
+|           
+\---utils
+        bookingMapper.ts
+        dateFormatter.ts
+        dateParser.ts
+        dateTimeHelper.ts
+        
