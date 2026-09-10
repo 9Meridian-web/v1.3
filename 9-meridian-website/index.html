@@ -11,8 +11,8 @@
 <script src="/runtime-config.js"></script>
 <script src="https://accounts.google.com/gsi/client" async defer></script>
 <style>
- 
- 
+
+
 :root{
   --bg: #05070f;
   --bg-1: #0a0e21;
@@ -21,18 +21,18 @@
   --panel-strong: rgba(255,255,255,0.075);
   --line: rgba(255,255,255,0.10);
   --line-soft: rgba(255,255,255,0.06);
- 
+
   --violet-1: #6d28d9;
   --violet-2: #9c4dff;
   --violet-3: #c9a6ff;
   --blue-1: #1d4ed8;
   --blue-2: #2f8fff;
   --blue-3: #7fd3ff;
- 
+
   --ink: #f4f6ff;
   --ink-dim: #a7add0;
   --ink-mute: #6d7399;
- 
+
   --grad-pin: linear-gradient(155deg, var(--violet-3), var(--violet-2) 45%, var(--violet-1) 100%);
   --grad-v: linear-gradient(160deg, var(--blue-3), var(--blue-2) 55%, var(--blue-1) 100%);
   --grad-text: linear-gradient(100deg, var(--blue-3) 0%, var(--violet-3) 55%, var(--violet-2) 100%);
@@ -46,17 +46,17 @@
   --fx-hue-1: var(--fx-glow);
   --fx-hue-2: var(--fx-blue);
   --fx-hue-3: var(--fx-deep);
- 
+
   --radius-sm: 10px;
   --radius-md: 16px;
   --radius-lg: 26px;
- 
+
   --ease: cubic-bezier(.22,.9,.28,1);
 }
 *{margin:0;padding:0;box-sizing:border-box;}
 [hidden]{display:none!important;}
 html{scroll-behavior:smooth;}
- 
+
 body{
   color:var(--ink);
   font-family:'Inter', sans-serif;
@@ -67,8 +67,8 @@ img{display:block;max-width:100%;}
 a{color:inherit;text-decoration:none;}
 button{font-family:inherit;cursor:pointer;border:none;background:none;color:inherit;}
 input,select,textarea{font-family:inherit;}
- 
- 
+
+
 @keyframes spin{from{transform:rotate(0deg);}to{transform:rotate(360deg);}}
 @keyframes float{
   0%,100%{transform:translateY(0);}
@@ -76,7 +76,7 @@ input,select,textarea{font-family:inherit;}
 }
 @keyframes blink{0%,80%,100%{opacity:.25;}40%{opacity:1;}}
 @keyframes stepIn{from{opacity:0;transform:translateY(10px);}to{opacity:1;transform:translateY(0);}}
- 
+
 /* ---- futuristic motion primitives ---- */
 @keyframes gradientShift{
   0%{background-position:0% 50%;}
@@ -138,12 +138,12 @@ input,select,textarea{font-family:inherit;}
   0%,100%{transform:translate(-6%,-4%) scale(1);}
   50%{transform:translate(6%,4%) scale(1.08);}
 }
- 
- 
+
+
 @media (prefers-reduced-motion: reduce){
   *{animation-duration:0.01ms !important; animation-iteration-count:1 !important; transition-duration:0.01ms !important; scroll-behavior:auto !important;}
 }
- 
+
 /* ============ FUTURISTIC GATE ENTRY SCREEN ============ */
 .lock-screen{
   --p: 0;
@@ -157,7 +157,7 @@ input,select,textarea{font-family:inherit;}
 }
 .lock-screen.is-open{pointer-events:none;}
 .lock-screen.is-hidden{display:none;}
- 
+
 /* -- gate panels (the two halves that slide apart) -- */
 .lock-gate{
   position:absolute;top:0;bottom:0;width:50%;
@@ -191,7 +191,7 @@ input,select,textarea{font-family:inherit;}
 }
 .lock-gate-left .lock-orb{width:320px;height:320px;left:-90px;top:-60px;background:radial-gradient(circle, var(--violet-2), transparent 70%);opacity:.35;}
 .lock-gate-right .lock-orb{width:300px;height:300px;right:-80px;bottom:-70px;background:radial-gradient(circle, var(--blue-2), transparent 70%);opacity:.3;animation-delay:-6s;}
- 
+
 /* -- energizing seam between the panels -- */
 .lock-seam{
   position:absolute;top:8%;bottom:8%;left:50%;width:2px;z-index:4;
@@ -205,7 +205,7 @@ input,select,textarea{font-family:inherit;}
 }
 @keyframes seamPulse{0%,100%{opacity:.35;}50%{opacity:.8;}}
 .lock-screen.is-open .lock-seam{opacity:0;transition:opacity .3s ease;}
- 
+
 /* -- burst of light released the instant the gate opens -- */
 .lock-core{
   position:absolute;top:50%;left:50%;width:4px;height:4px;z-index:2;
@@ -229,7 +229,7 @@ input,select,textarea{font-family:inherit;}
   18%{opacity:.85;}
   100%{opacity:0;}
 }
- 
+
 .lock-content{
   position:relative;z-index:5;
   max-width:560px;width:100%;
@@ -364,7 +364,7 @@ input,select,textarea{font-family:inherit;}
   .lock-title{animation:none !important;}
   .lock-gate, .lock-seam, .lock-content{transition-duration:.01ms !important;}
 }
- 
+
 /* ============ VIEW ROUTER ============ */
 .view{display:none;}
 .view.is-active{display:block;min-height:100svh;min-height:100dvh;}
@@ -389,7 +389,7 @@ input,select,textarea{font-family:inherit;}
     var(--bg);
   line-height:1.6;
 }
- 
+
 /* ============ HOME VIEW ============ */
 #view-home img {display:block;max-width:100%;}
 #view-home a {color:inherit;text-decoration:none;}
@@ -1128,7 +1128,7 @@ input,select,textarea{font-family:inherit;}
 #view-home .logo-track {gap:10px;padding-right:10px;}
 #view-home .logo-pill {padding:9px 16px;font-size:13px;}
 }
- 
+
 /* ============ HOW IT WORKS ============ */
 #view-home .how {border-top:1px solid var(--line-soft);}
 #view-home .how-grid {
@@ -1210,7 +1210,7 @@ input,select,textarea{font-family:inherit;}
   stroke-dasharray:10 8;
   animation:dashFlow 2.5s linear infinite;
 }
- 
+
 /* ============ INTEGRATIONS ============ */
 #view-home .integrations {border-top:1px solid var(--line-soft);}
 #view-home .integrations-grid {
@@ -1284,7 +1284,7 @@ input,select,textarea{font-family:inherit;}
 @media (max-width:560px){
 #view-home .integrations-grid {grid-template-columns:repeat(2,1fr);}
 }
- 
+
 /* ============ COMPARISON TABLE ============ */
 #view-home .compare {border-top:1px solid var(--line-soft);}
 #view-home .compare-table-wrap {
@@ -1334,7 +1334,7 @@ input,select,textarea{font-family:inherit;}
 #view-home .compare-table-wrap.is-visible tbody tr:nth-child(4) .compare-yes, #view-home .compare-table-wrap.is-visible tbody tr:nth-child(4) .compare-no{animation-delay:.45s}
 #view-home .compare-table-wrap.is-visible tbody tr:nth-child(5) .compare-yes, #view-home .compare-table-wrap.is-visible tbody tr:nth-child(5) .compare-no{animation-delay:.55s}
 #view-home .compare-table-wrap.is-visible tbody tr:nth-child(6) .compare-yes, #view-home .compare-table-wrap.is-visible tbody tr:nth-child(6) .compare-no{animation-delay:.65s}
- 
+
 /* ============ SECURITY ============ */
 #view-home .security {border-top:1px solid var(--line-soft);}
 #view-home .security-grid {
@@ -1383,7 +1383,7 @@ input,select,textarea{font-family:inherit;}
 @media (max-width:560px){
 #view-home .security-grid {grid-template-columns:1fr;}
 }
- 
+
 /* ============ ROI CALCULATOR ============ */
 #view-home .roi {border-top:1px solid var(--line-soft);}
 #view-home .roi-panel {
@@ -1469,7 +1469,7 @@ input,select,textarea{font-family:inherit;}
 @media (max-width:880px){
 #view-home .roi-panel {grid-template-columns:1fr;padding:30px 24px;gap:30px;}
 }
- 
+
 #view-home .demo {border-top:1px solid var(--line-soft);}
 #view-home .demo-panel {display:flex;justify-content:center;}
 #view-home .demo-window {
@@ -1778,7 +1778,7 @@ input,select,textarea{font-family:inherit;}
 #view-home .footer-inner {grid-template-columns:1fr;}
 #view-home section {padding:80px 0;}
 }
- 
+
 /* ============ SETUP VIEW ============ */
 #view-setup img {display:block;max-width:100%;}
 #view-setup a {color:inherit;text-decoration:none;}
@@ -2092,7 +2092,7 @@ input,select,textarea{font-family:inherit;}
 #view-setup .field-row {grid-template-columns:1fr;}
 #view-setup .connect-grid {grid-template-columns:1fr;}
 }
- 
+
 /* ============ PRIVACY VIEW ============ */
 #view-privacy img {display:block;max-width:100%;}
 #view-privacy a {color:inherit;text-decoration:none;}
@@ -2219,8 +2219,8 @@ input,select,textarea{font-family:inherit;}
 @media (max-width:640px){
 #view-privacy .policy-panel {padding:26px;}
 }
- 
- 
+
+
 /* ============ PAYMENT VIEW ============ */
 #view-payment.is-active{background:radial-gradient(1000px 650px at 10% -10%,rgba(124,58,237,.18),transparent 60%),radial-gradient(900px 600px at 90% 100%,rgba(47,143,255,.13),transparent 55%),var(--bg);line-height:1.5}
 #view-payment .payment-shell{min-height:100svh;min-height:100dvh;display:flex;align-items:center;justify-content:center;padding:42px 22px;position:relative;overflow:hidden}
@@ -2879,7 +2879,7 @@ a,button,[role="button"]{touch-action:manipulation;-webkit-tap-highlight-color:t
       <img class="brand-logo" alt="9 Meridian logo" width="40" height="40">
       <span class="brand-name">9&nbsp;Meridian</span>
     </a>
- 
+
     <nav class="main-nav" id="mainNav">
       <a href="#about" class="nav-link">About</a>
       <a href="#why" class="nav-link">Why 9 Meridian</a>
@@ -2888,23 +2888,24 @@ a,button,[role="button"]{touch-action:manipulation;-webkit-tap-highlight-color:t
       <a href="#pricing" class="nav-link">Pricing</a>
       <a href="#roi" class="nav-link">ROI</a>
       <a href="#demo" class="nav-link">Live Demo</a>
+      <a href="#booking" class="nav-link">Booking</a>
       <a href="#faq" class="nav-link">FAQ</a>
       <a href="#feedback" class="nav-link">Reviews</a>
       <a href="#login" class="nav-link nav-auth-mobile" id="mobileSignInLink">Sign in</a>
     </nav>
     <button class="nav-backdrop" id="navBackdrop" type="button" aria-label="Close menu"></button>
- 
+
     <div class="header-actions">
       <div class="auth-guest" id="authGuestActions">
         <a href="#login" class="btn btn-ghost sign-in-btn">Sign in</a>
-        <a href="#setup-form" class="btn btn-primary header-cta">Get Started</a>
+        <a href="#booking" class="btn btn-primary header-cta">Book a Demo</a>
       </div>
       <div class="auth-user" id="authUserActions" hidden>
         <button class="user-chip" id="userChip" type="button" aria-haspopup="menu" aria-expanded="false">
           <span class="user-avatar" id="headerUserAvatar">9M</span><span class="user-chip-name" id="headerUserName">Account</span>
         </button>
         <div class="user-menu" id="userMenu" role="menu">
-          <a href="#setup-form" role="menuitem">Complete setup</a>
+          <a href="#booking" role="menuitem">Book appointment</a>
           <a href="#feedback-form" role="menuitem">Give feedback</a>
           <button type="button" id="logoutButton" role="menuitem">Log out</button>
         </div>
@@ -2919,7 +2920,7 @@ a,button,[role="button"]{touch-action:manipulation;-webkit-tap-highlight-color:t
     <button type="button" id="dismissServerSessionNotice" aria-label="Dismiss notice">&times;</button>
   </div>
 </header>
- 
+
 <!-- ============ HERO ============ -->
 <section id="top" class="hero">
   <div class="hero-spotlight" id="heroSpotlight" aria-hidden="true"></div>
@@ -2931,14 +2932,14 @@ a,button,[role="button"]{touch-action:manipulation;-webkit-tap-highlight-color:t
       <ellipse cx="400" cy="400" rx="360" ry="150" class="ring ring-d" transform="rotate(120 400 400)"/>
     </svg>
   </div>
- 
+
   <div class="wrap hero-inner">
     <div class="hero-copy reveal">
       <span class="eyebrow">AI Concierge for Modern Business</span>
       <h1 class="hero-title">Every customer<br>meets a guide<br><span class="grad-text">who never sleeps.</span></h1>
       <p class="hero-sub">9 Meridian builds trained chat agents that answer questions, qualify leads, and book meetings the moment someone lands on your site — in 40+ languages, around the clock.</p>
       <div class="hero-cta-row">
-        <a href="#setup-form" class="btn btn-primary">Get Started</a>
+        <a href="#booking" class="btn btn-primary">Book a Demo</a>
         <a href="#demo" class="btn btn-ghost">Try the Live Chatbot ↓</a>
       </div>
       <div class="hero-trust">
@@ -2948,7 +2949,7 @@ a,button,[role="button"]{touch-action:manipulation;-webkit-tap-highlight-color:t
         </div>
       </div>
     </div>
- 
+
     <div class="hero-widget reveal" aria-hidden="true">
       <div class="widget-card">
         <div class="widget-head">
@@ -2969,7 +2970,7 @@ a,button,[role="button"]{touch-action:manipulation;-webkit-tap-highlight-color:t
     </div>
   </div>
 </section>
- 
+
 <!-- ============ LOGO STRIP ============ -->
 <section id="logos" class="logo-strip">
   <div class="wrap">
@@ -2996,7 +2997,7 @@ a,button,[role="button"]{touch-action:manipulation;-webkit-tap-highlight-color:t
     </div>
   </div>
 </section>
- 
+
 <!-- ============ ABOUT ============ -->
 <section id="about" class="about">
   <div class="bg-orb" style="width:340px;height:340px;background:rgba(124,58,237,0.25);top:-60px;right:-100px;"></div>
@@ -3008,7 +3009,7 @@ a,button,[role="button"]{touch-action:manipulation;-webkit-tap-highlight-color:t
       <p>No engineering team required. Most businesses are live in under a day, with a human always one click away when the conversation needs a person.</p>
       <a href="#features" class="about-link">See what it can do →</a>
     </div>
- 
+
     <div class="about-stats reveal">
       <div class="stat-card">
         <span class="stat-num"><span class="count-target" data-target="1.8" data-decimals="1">0</span><small>s</small></span>
@@ -3029,7 +3030,7 @@ a,button,[role="button"]{touch-action:manipulation;-webkit-tap-highlight-color:t
     </div>
   </div>
 </section>
- 
+
 <!-- ============ WHY 9 MERIDIAN ============ -->
 <section id="why" class="why" data-fx-scene="2">
   <div class="wrap">
@@ -3057,7 +3058,7 @@ a,button,[role="button"]{touch-action:manipulation;-webkit-tap-highlight-color:t
       <h2>One assistant, every channel it needs to cover.</h2>
       <p>Everything required to go from "we should get a chatbot" to a fully staffed front line — without adding headcount.</p>
     </div>
- 
+
     <div class="features-grid">
       <div class="feature-card reveal">
         <div class="feature-icon"><svg viewBox="0 0 24 24" fill="none"><path d="M12 3v3M12 18v3M4.2 4.2l2.1 2.1M17.7 17.7l2.1 2.1M3 12h3M18 12h3M4.2 19.8l2.1-2.1M17.7 6.3l2.1-2.1" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/><circle cx="12" cy="12" r="4.2" stroke="currentColor" stroke-width="1.6"/></svg></div>
@@ -3092,7 +3093,7 @@ a,button,[role="button"]{touch-action:manipulation;-webkit-tap-highlight-color:t
     </div>
   </div>
 </section>
- 
+
 <!-- ============ HOW IT WORKS ============ -->
 <section id="how-it-works" class="how">
   <div class="wrap">
@@ -3126,7 +3127,7 @@ a,button,[role="button"]{touch-action:manipulation;-webkit-tap-highlight-color:t
     </div>
   </div>
 </section>
- 
+
 <!-- ============ INTEGRATIONS ============ -->
 <section id="integrations" class="integrations">
   <div class="bg-orb" style="width:300px;height:300px;background:rgba(47,143,255,0.22);bottom:-40px;left:-80px;animation-delay:-3s;"></div>
@@ -3148,7 +3149,7 @@ a,button,[role="button"]{touch-action:manipulation;-webkit-tap-highlight-color:t
     </div>
   </div>
 </section>
- 
+
 <!-- ============ COMPARISON ============ -->
 <section id="compare" class="compare">
   <div class="wrap">
@@ -3209,7 +3210,7 @@ a,button,[role="button"]{touch-action:manipulation;-webkit-tap-highlight-color:t
     </div>
   </div>
 </section>
- 
+
 <!-- ============ SECURITY ============ -->
 <section id="security" class="security">
   <div class="wrap">
@@ -3242,7 +3243,7 @@ a,button,[role="button"]{touch-action:manipulation;-webkit-tap-highlight-color:t
     </div>
   </div>
 </section>
- 
+
 <!-- ============ PRICING ============ -->
 <section id="pricing" class="pricing">
   <div class="wrap">
@@ -3251,7 +3252,7 @@ a,button,[role="button"]{touch-action:manipulation;-webkit-tap-highlight-color:t
       <h2>Simple pricing, one bot or a full front line.</h2>
       <p>One-time build fee to get your agents live, plus a flat monthly fee to keep them maintained, monitored, and up to date.</p>
     </div>
- 
+
     <div class="pricing-grid">
       <div class="pricing-card reveal">
         <span class="pricing-tag">1 Agent</span>
@@ -3266,7 +3267,7 @@ a,button,[role="button"]{touch-action:manipulation;-webkit-tap-highlight-color:t
         </ul>
         <a href="#payment" data-payment-plan="Single Bot" class="btn btn-ghost pricing-btn">Get Started</a>
       </div>
- 
+
       <div class="pricing-card pricing-card-featured reveal">
         <span class="pricing-badge">Most popular</span>
         <span class="pricing-tag">2 Agents</span>
@@ -3281,7 +3282,7 @@ a,button,[role="button"]{touch-action:manipulation;-webkit-tap-highlight-color:t
         </ul>
         <a href="#payment" data-payment-plan="Dual Bot Pack" class="btn btn-primary pricing-btn">Get Started</a>
       </div>
- 
+
       <div class="pricing-card reveal">
         <span class="pricing-tag">3 Agents</span>
         <h3>Full Front Line</h3>
@@ -3299,7 +3300,7 @@ a,button,[role="button"]{touch-action:manipulation;-webkit-tap-highlight-color:t
     <p class="pricing-note">Prices in USD. Monthly maintenance covers hosting, uptime monitoring, and knowledge-base updates. Custom channel combinations and higher-volume plans available on request.</p>
   </div>
 </section>
- 
+
 <!-- ============ ROI CALCULATOR ============ -->
 <section id="roi" class="roi">
   <div class="bg-orb" style="width:360px;height:360px;background:rgba(157,77,255,0.2);top:-80px;left:50%;animation-delay:-6s;"></div>
@@ -3335,7 +3336,7 @@ a,button,[role="button"]{touch-action:manipulation;-webkit-tap-highlight-color:t
     </div>
   </div>
 </section>
- 
+
 <!-- ============ LIVE DEMO CHATBOT ============ -->
 <section id="demo" class="demo">
   <div class="wrap demo-inner">
@@ -3344,7 +3345,7 @@ a,button,[role="button"]{touch-action:manipulation;-webkit-tap-highlight-color:t
       <h2>Talk to the assistant yourself.</h2>
       <p>This is a lightweight preview of the real thing — ask about pricing, setup, integrations, or say hello.</p>
     </div>
- 
+
     <div class="demo-panel reveal">
       <div class="demo-window">
         <div class="widget-head">
@@ -3372,7 +3373,83 @@ a,button,[role="button"]{touch-action:manipulation;-webkit-tap-highlight-color:t
     </div>
   </div>
 </section>
- 
+
+<!-- ============ BOOKING ============ -->
+<section id="booking" class="booking">
+  <div class="wrap booking-inner">
+    <div class="booking-copy reveal">
+      <span class="eyebrow">Booking</span>
+      <h2>Book a 15-minute walkthrough.</h2>
+      <p>We'll show your assistant answering real questions from your site, walk through pricing, and map out a launch date. No pressure, no slides.</p>
+      <ul class="booking-points">
+        <li>See a working assistant trained on a business like yours</li>
+        <li>Get a straight answer on pricing and timeline</li>
+        <li>Leave with a plan, whether or not you move forward</li>
+      </ul>
+    </div>
+
+    <form class="booking-form reveal" id="bookingForm">
+      <p class="booking-auth-notice" id="bookingAuthNotice" role="status" hidden>Sign in to confirm your booking &mdash; your details are kept.</p>
+      <input type="text" name="hp_field" id="bookingHoneypot" class="hp-field" tabindex="-1" autocomplete="off" aria-hidden="true">
+      <div class="form-row">
+        <label>Full name
+          <input type="text" name="name" required placeholder="Jordan Lee">
+        </label>
+        <label>Work email
+          <input type="email" name="email" required placeholder="jordan@company.com">
+        </label>
+      </div>
+      <div class="form-row">
+        <label>Company
+          <input type="text" name="company" required placeholder="Company name">
+        </label>
+        <label>Team size
+          <select name="size" required>
+            <option value="">Select…</option>
+            <option>1–10</option>
+            <option>11–50</option>
+            <option>51–200</option>
+            <option>200+</option>
+          </select>
+        </label>
+      </div>
+      <div class="form-row">
+        <label>Phone
+          <input type="tel" name="phone" autocomplete="tel" placeholder="+91 98765 43210">
+        </label>
+        <label>What would you like to explore?
+          <select name="topic" required>
+            <option value="">Select a topic&hellip;</option>
+            <option value="Sales and lead qualification">Sales and lead qualification</option>
+            <option value="Customer support">Customer support</option>
+            <option value="Booking automation">Booking automation</option>
+            <option value="Full AI receptionist">Full AI receptionist</option>
+          </select>
+        </label>
+      </div>
+      <div class="form-row">
+        <label>Preferred date
+          <input type="date" name="date" required>
+        </label>
+        <label>Preferred time
+          <input type="time" name="time" required>
+        </label>
+      </div>
+      <label class="full">What should we know before the call?
+        <textarea name="message" rows="3" placeholder="A little about what you're hoping to automate…"></textarea>
+      </label>
+      <button type="submit" class="btn btn-primary form-submit">Confirm Booking</button>
+      <p class="booking-api-status" id="bookingApiStatus" aria-live="polite"></p>
+    </form>
+
+    <div class="booking-success" id="bookingSuccess" hidden>
+      <svg viewBox="0 0 24 24" fill="none" class="success-check"><path d="M4 12.5l5 5L20 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      <h3>You're booked.</h3>
+      <p id="bookingSuccessText">We'll send a calendar invite and a confirmation email shortly.</p>
+    </div>
+  </div>
+</section>
+
 <!-- ============ FAQ ============ -->
 <section id="faq" class="faq">
   <div class="wrap">
@@ -3380,7 +3457,7 @@ a,button,[role="button"]{touch-action:manipulation;-webkit-tap-highlight-color:t
       <span class="eyebrow">FAQ</span>
       <h2>Questions, answered directly.</h2>
     </div>
- 
+
     <div class="faq-list">
       <div class="faq-item reveal is-open">
         <button class="faq-q" type="button">
@@ -3427,7 +3504,7 @@ a,button,[role="button"]{touch-action:manipulation;-webkit-tap-highlight-color:t
     </div>
   </div>
 </section>
- 
+
 <!-- ============ FEEDBACK ============ -->
 <section id="feedback" class="feedback">
   <div class="wrap">
@@ -3435,7 +3512,7 @@ a,button,[role="button"]{touch-action:manipulation;-webkit-tap-highlight-color:t
       <span class="eyebrow">Feedback</span>
       <h2>What teams say after switching on 9 Meridian.</h2>
     </div>
- 
+
     <div class="feedback-grid">
       <div class="feedback-card reveal">
         <div class="stars">★★★★★</div>
@@ -3499,16 +3576,16 @@ a,button,[role="button"]{touch-action:manipulation;-webkit-tap-highlight-color:t
     </div>
   </div>
 </section>
- 
+
 <!-- ============ CTA BANNER ============ -->
 <section class="cta-banner">
   <div class="wrap cta-inner reveal">
     <div class="cta-rings" aria-hidden="true"></div>
     <h2>Give your site a front line that never clocks out.</h2>
-    <a href="#setup-form" class="btn btn-primary">Get Started</a>
+    <a href="#booking" class="btn btn-primary">Book a Demo</a>
   </div>
 </section>
- 
+
 <!-- ============ FOOTER ============ -->
 <footer class="site-footer">
   <div class="wrap footer-inner">
@@ -3530,7 +3607,7 @@ a,button,[role="button"]{touch-action:manipulation;-webkit-tap-highlight-color:t
         </a>
       </div>
     </div>
- 
+
     <div class="footer-col">
       <h4>Product</h4>
       <a href="#features">Features</a>
@@ -3542,12 +3619,12 @@ a,button,[role="button"]{touch-action:manipulation;-webkit-tap-highlight-color:t
       <h4>Company</h4>
       <a href="#about">About</a>
       <a href="#feedback">Reviews</a>
-      <a href="#setup-form">Get Started</a>
+      <a href="#booking">Book a Demo</a>
     </div>
     <div class="footer-col">
       <h4>Get in touch</h4>
       <a href="mailto:hello@9meridian.com">9meridian.io@gmail.com</a>
-      <a href="mailto:9meridian.io@gmail.com">Talk to sales</a>
+      <a href="#booking">Talk to sales</a>
     </div>
     <div class="footer-col">
       <h4>Legal</h4>
@@ -3995,14 +4072,14 @@ a,button,[role="button"]{touch-action:manipulation;-webkit-tap-highlight-color:t
   </div>
 </dialog>
 <div class="app-toast" id="appToast" role="status" aria-live="polite"></div>
- 
- 
+
+
 <div id="view-payment" class="view">
   <div class="payment-shell"><div class="payment-orb a"></div><div class="payment-orb b"></div>
     <div class="payment-card">
       <div class="payment-top"><a href="#home" class="payment-brand"><img class="brand-logo" alt="9 Meridian logo"><strong>9 Meridian</strong></a><span class="secure-pill">● SECURE CHECKOUT</span></div>
       <div id="paymentCheckoutArea"><div class="payment-grid">
-        <aside class="plan-panel"><span class="plan-tag">Your selected plan</span><h1 id="paymentPlanName">Starter</h1><p>Your AI receptionist build starts here. Pricing and checkout are configured securely by the server.</p><div class="server-price" id="paymentAmount">Secure hosted checkout</div><ul class="payment-points"><li>Secure Dodo Payments checkout</li><li>Verified payment webhooks</li><li>Client onboarding after confirmed payment</li></ul></aside>
+        <aside class="plan-panel"><span class="plan-tag">Your selected plan</span><h1 id="paymentPlanName">Dual Bot Pack</h1><p>Your AI receptionist build starts here. The final amount is created securely by your server for the selected plan.</p><div class="server-price" id="paymentAmount">— <small>server-priced</small></div><ul class="payment-points"><li>Secure Dodo checkout</li><li>Server-side payment verification</li><li>Client onboarding after verified payment</li></ul></aside>
         <section class="checkout-panel"><h2 class="checkout-title">Let's get your order started.</h2><p class="checkout-sub">Enter your details, then swipe to unlock secure payment.</p>
           <div class="pay-field"><label for="payName">Full name</label><input id="payName" type="text" autocomplete="name" placeholder="Your full name"></div>
           <div class="pay-field"><label for="payEmail">Business email</label><input id="payEmail" type="email" autocomplete="email" placeholder="you@business.com"></div>
@@ -4013,11 +4090,11 @@ a,button,[role="button"]{touch-action:manipulation;-webkit-tap-highlight-color:t
         </section>
       </div></div>
       <div class="payment-success" id="paymentSuccess"><div class="success-ring">✓</div><h2>Payment verified.</h2><p id="paymentSuccessText">Your order is confirmed. Your onboarding is ready.</p><a href="#setup-form" id="continueOnboarding" class="btn">Continue to onboarding →</a></div>
-      <div class="payment-foot">Payment credentials never reach this page. Payment authenticity is verified by your backend.</div>
+      <div class="payment-foot">Your payment credentials never reach this page. Payment authenticity is verified by your backend.</div>
     </div>
   </div>
 </div>
- 
+
 <div id="view-setup" class="view">
 <header class="topbar">
   <div class="wrap topbar-inner">
@@ -4028,15 +4105,15 @@ a,button,[role="button"]{touch-action:manipulation;-webkit-tap-highlight-color:t
     <span class="topbar-tag">AI Receptionist Setup</span>
   </div>
 </header>
- 
+
 <main class="wrap page">
- 
+
   <div class="intro">
     <span class="eyebrow">Let's build it</span>
     <h1>Set up your AI receptionist.</h1>
     <p>Answer a few questions about your business and how you want it to work. This takes about 6 minutes — everything can be edited later.</p>
   </div>
- 
+
   <div class="progress-block">
     <div class="progress-text">
       <span id="stepLabel">Step 1 of 11</span>
@@ -4044,15 +4121,15 @@ a,button,[role="button"]{touch-action:manipulation;-webkit-tap-highlight-color:t
     </div>
     <div class="progress-track" id="progressTrack" role="list"></div>
   </div>
- 
+
   <form id="setupForm" novalidate>
    <div class="form-panel">
- 
+
     <!-- STEP 1 -->
     <fieldset class="form-step is-active" data-step="1" data-title="Company Information">
       <h2 class="step-heading">Company information</h2>
       <p class="step-sub">The basics — who we're building this for and how to reach you.</p>
- 
+
       <div class="field-row">
         <div class="field" data-required="true">
           <label>Company name <span class="req">*</span></label>
@@ -4099,12 +4176,12 @@ a,button,[role="button"]{touch-action:manipulation;-webkit-tap-highlight-color:t
         </div>
       </div>
     </fieldset>
- 
+
     <!-- STEP 2 -->
     <fieldset class="form-step" data-step="2" data-title="Business Location">
       <h2 class="step-heading">Business location</h2>
       <p class="step-sub">So the assistant can quote the right hours and time zone from day one.</p>
- 
+
       <div class="field-row">
         <div class="field" data-required="true">
           <label>Country <span class="req">*</span></label>
@@ -4140,12 +4217,12 @@ a,button,[role="button"]{touch-action:manipulation;-webkit-tap-highlight-color:t
         </div>
       </div>
     </fieldset>
- 
+
     <!-- STEP 3 -->
     <fieldset class="form-step" data-step="3" data-title="AI Receptionist Type">
       <h2 class="step-heading">AI receptionist type</h2>
       <p class="step-sub">Select one or more — most businesses start with two or three channels.</p>
- 
+
       <div class="field" data-required="true" data-group="receptionistType">
         <span class="group-label">Channels <span class="req">*</span></span>
         <div class="checkbox-group">
@@ -4173,12 +4250,12 @@ a,button,[role="button"]{touch-action:manipulation;-webkit-tap-highlight-color:t
         <span class="error-msg">Please select at least one channel.</span>
       </div>
     </fieldset>
- 
+
     <!-- STEP 4 -->
     <fieldset class="form-step" data-step="4" data-title="Project Deadline">
       <h2 class="step-heading">Project deadline</h2>
       <p class="step-sub">Give us a target so we can schedule build time properly.</p>
- 
+
       <div class="field-row">
         <div class="field" data-required="true">
           <label>Preferred launch date <span class="req">*</span></label>
@@ -4201,12 +4278,12 @@ a,button,[role="button"]{touch-action:manipulation;-webkit-tap-highlight-color:t
         </div>
       </div>
     </fieldset>
- 
+
     <!-- STEP 5 -->
     <fieldset class="form-step" data-step="5" data-title="Calendar Integration">
       <h2 class="step-heading">Calendar integration</h2>
       <p class="step-sub">Connect the calendar your assistant should book directly into. You'll authorize the real connection after submitting — this just tells us which one to set up.</p>
- 
+
       <div class="connect-grid" data-group="calendar">
         <label class="connect-card">
           <input type="radio" name="calendar" value="Google Calendar">
@@ -4228,12 +4305,12 @@ a,button,[role="button"]{touch-action:manipulation;-webkit-tap-highlight-color:t
         </label>
       </div>
     </fieldset>
- 
+
     <!-- STEP 6 -->
     <fieldset class="form-step" data-step="6" data-title="Lead Storage">
       <h2 class="step-heading">Lead storage</h2>
       <p class="step-sub">Where should new leads and conversation summaries land?</p>
- 
+
       <div class="connect-grid" data-group="leadStorage" style="grid-template-columns:1fr 1fr;">
         <label class="connect-card">
           <input type="radio" name="leadStorage" value="Google Sheets" id="lsSheets">
@@ -4248,7 +4325,7 @@ a,button,[role="button"]{touch-action:manipulation;-webkit-tap-highlight-color:t
           <span class="connect-state">Not connected</span>
         </label>
       </div>
- 
+
       <div class="conditional" id="crmConditional">
         <div class="conditional-inner">
           <div class="field-row">
@@ -4273,12 +4350,12 @@ a,button,[role="button"]{touch-action:manipulation;-webkit-tap-highlight-color:t
         </div>
       </div>
     </fieldset>
- 
+
     <!-- STEP 7 -->
     <fieldset class="form-step" data-step="7" data-title="Business Information">
       <h2 class="step-heading">Business information</h2>
       <p class="step-sub">This is what the assistant will actually say when someone asks "are you open?" or "what do you offer?"</p>
- 
+
       <div class="field-row">
         <div class="field">
           <label>Business working hours</label>
@@ -4310,12 +4387,12 @@ a,button,[role="button"]{touch-action:manipulation;-webkit-tap-highlight-color:t
         <textarea name="faqs" rows="3" placeholder="Q: Do you accept walk-ins? A: ..."></textarea>
       </div>
     </fieldset>
- 
+
     <!-- STEP 8 -->
     <fieldset class="form-step" data-step="8" data-title="AI Behaviour">
       <h2 class="step-heading">AI behaviour</h2>
       <p class="step-sub">How your assistant should sound, and when it should step aside for a human.</p>
- 
+
       <div class="field full">
         <label>Greeting message</label>
         <textarea name="greeting" rows="2" placeholder="e.g. Thanks for reaching out to Acme Dental — how can I help today?"></textarea>
@@ -4335,7 +4412,7 @@ a,button,[role="button"]{touch-action:manipulation;-webkit-tap-highlight-color:t
           </div>
         </div>
       </div>
- 
+
       <div class="field" data-group="transferHuman">
         <span class="group-label">Should AI transfer to a human?</span>
         <div class="radio-group">
@@ -4358,12 +4435,12 @@ a,button,[role="button"]{touch-action:manipulation;-webkit-tap-highlight-color:t
         </div>
       </div>
     </fieldset>
- 
+
     <!-- STEP 9 -->
     <fieldset class="form-step" data-step="9" data-title="Notifications">
       <h2 class="step-heading">Notifications</h2>
       <p class="step-sub">How should we notify you about new leads and bookings?</p>
- 
+
       <div class="field" data-group="notify">
         <span class="group-label">Notify me through</span>
         <div class="checkbox-group">
@@ -4373,23 +4450,23 @@ a,button,[role="button"]{touch-action:manipulation;-webkit-tap-highlight-color:t
         </div>
       </div>
     </fieldset>
- 
+
     <!-- STEP 10 -->
     <fieldset class="form-step" data-step="10" data-title="Additional Preferences">
       <h2 class="step-heading">Additional preferences</h2>
       <p class="step-sub">Anything else your AI receptionist should know before it starts talking to customers.</p>
- 
+
       <div class="field full">
         <label>Tell us anything important</label>
         <textarea name="additionalNotes" rows="6" placeholder="Examples: pricing information, booking rules, holiday schedule, special instructions, custom workflows…"></textarea>
       </div>
     </fieldset>
- 
+
     <!-- STEP 11 -->
     <fieldset class="form-step" data-step="11" data-title="Agreement">
       <h2 class="step-heading">Agreement</h2>
       <p class="step-sub">Last step — confirm the details below and we'll start building.</p>
- 
+
       <div class="checkbox-agree">
         <input type="checkbox" name="confirmCorrect" id="confirmCorrect" required>
         <label for="confirmCorrect">I confirm that the information provided is correct.</label>
@@ -4407,7 +4484,7 @@ a,button,[role="button"]{touch-action:manipulation;-webkit-tap-highlight-color:t
       </div>
       <span class="error-msg" id="agreeError" style="display:none;">Please confirm all three statements before submitting.</span>
     </fieldset>
- 
+
    <div class="step-actions">
      <button type="button" class="btn btn-ghost" id="backBtn" disabled>← Back</button>
      <button type="button" class="btn btn-primary" id="nextBtn">Next →</button>
@@ -4415,7 +4492,7 @@ a,button,[role="button"]{touch-action:manipulation;-webkit-tap-highlight-color:t
    </div>
    </div>
   </form>
- 
+
   <div class="form-panel success-panel" id="successPanel" hidden>
     <svg viewBox="0 0 24 24" fill="none" class="success-check"><path d="M4 12.5l5 5L20 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
     <h2>Your AI receptionist is being built.</h2>
@@ -4428,10 +4505,10 @@ a,button,[role="button"]{touch-action:manipulation;-webkit-tap-highlight-color:t
       <a href="index.html" class="btn btn-ghost">Back to site</a>
     </div>
   </div>
- 
+
 </main>
 </div>
- 
+
 <div id="view-privacy" class="view">
 <header class="topbar">
   <div class="wrap topbar-inner">
@@ -4442,7 +4519,7 @@ a,button,[role="button"]{touch-action:manipulation;-webkit-tap-highlight-color:t
     <a href="setup-form.html" class="back-link">← Back to setup form</a>
   </div>
 </header>
- 
+
 <main class="wrap page">
   <div class="page-head">
     <span class="eyebrow">Legal</span>
@@ -4450,7 +4527,7 @@ a,button,[role="button"]{touch-action:manipulation;-webkit-tap-highlight-color:t
     <p class="updated">Effective Date: July 26, 2026</p>
     <p class="intro-copy">Welcome to 9 Meridian. We value privacy and are committed to protecting the information entrusted to us. This Privacy Policy explains how we collect, use, store, and protect information when you interact with our website, services, or business communications.</p>
   </div>
- 
+
   <nav class="toc">
     <a href="#info-we-collect">Information we collect</a>
     <a href="#how-we-use">How we use information</a>
@@ -4463,9 +4540,9 @@ a,button,[role="button"]{touch-action:manipulation;-webkit-tap-highlight-color:t
     <a href="#changes">Changes to this policy</a>
     <a href="#contact">Contact us</a>
   </nav>
- 
+
   <div class="policy-panel">
- 
+
     <section id="info-we-collect">
       <h2><span class="num">01</span> Information We Collect</h2>
       <p>We may collect the following information:</p>
@@ -4477,7 +4554,7 @@ a,button,[role="button"]{touch-action:manipulation;-webkit-tap-highlight-color:t
         <li>Technical information such as IP address, browser type, device information, and website usage analytics.</li>
       </ul>
     </section>
- 
+
     <section id="how-we-use">
       <h2><span class="num">02</span> How We Use Information</h2>
       <p>We use collected information to:</p>
@@ -4490,17 +4567,17 @@ a,button,[role="button"]{touch-action:manipulation;-webkit-tap-highlight-color:t
         <li>Comply with applicable legal obligations.</li>
       </ul>
     </section>
- 
+
     <section id="lead-generation">
       <h2><span class="num">03</span> Lead Generation</h2>
       <p>As part of our business development activities, we may collect publicly available business information from legitimate public sources, including company websites, business directories, professional networking platforms, and publicly accessible business listings. This information is used solely for business-to-business communication regarding our services.</p>
     </section>
- 
+
     <section id="storage-security">
       <h2><span class="num">04</span> Data Storage and Security</h2>
       <p>We implement reasonable administrative, technical, and organizational safeguards to protect information against unauthorized access, disclosure, alteration, or destruction. While we strive to maintain appropriate security, no electronic storage or transmission method can be guaranteed to be completely secure.</p>
     </section>
- 
+
     <section id="sharing">
       <h2><span class="num">05</span> Information Sharing</h2>
       <p>We do not sell personal information. Information may be shared only when necessary to:</p>
@@ -4511,12 +4588,12 @@ a,button,[role="button"]{touch-action:manipulation;-webkit-tap-highlight-color:t
         <li>Protect the rights, safety, and security of our business, clients, or others.</li>
       </ul>
     </section>
- 
+
     <section id="retention">
       <h2><span class="num">06</span> Data Retention</h2>
       <p>We retain information only for as long as necessary to fulfill legitimate business purposes, comply with legal obligations, resolve disputes, and enforce agreements.</p>
     </section>
- 
+
     <section id="rights">
       <h2><span class="num">07</span> Your Rights</h2>
       <p>Depending on your jurisdiction, you may have the right to:</p>
@@ -4529,17 +4606,17 @@ a,button,[role="button"]{touch-action:manipulation;-webkit-tap-highlight-color:t
       </ul>
       <p>To exercise these rights, please contact us using the details below.</p>
     </section>
- 
+
     <section id="third-party">
       <h2><span class="num">08</span> Third-Party Services</h2>
       <p>Our website or services may include links or integrations with third-party platforms. We are not responsible for the privacy practices or content of external websites or services.</p>
     </section>
- 
+
     <section id="changes">
       <h2><span class="num">09</span> Changes to This Policy</h2>
       <p>We may update this Privacy Policy periodically. Any revisions will be published on this page with an updated effective date.</p>
     </section>
- 
+
     <section id="contact">
       <h2><span class="num">10</span> Contact Us</h2>
       <p>If you have questions regarding this Privacy Policy or our data practices, please contact:</p>
@@ -4547,7 +4624,7 @@ a,button,[role="button"]{touch-action:manipulation;-webkit-tap-highlight-color:t
       Email: <a href="mailto:ninemeridian.io@gmail.com" class="inline-link">ninemeridian.io@gmail.com</a><br>
       Website: <a href="index.html" class="inline-link">9meridian.io</a></p>
     </section>
- 
+
     <div class="contact-box">
       <p>Read through everything? You can head back and finish your setup.</p>
       <a href="setup-form.html" class="btn">Back to setup form →</a>
@@ -4555,7 +4632,7 @@ a,button,[role="button"]{touch-action:manipulation;-webkit-tap-highlight-color:t
   </div>
 </main>
 </div>
- 
+
 <script>
 
 /* ============ GOOGLE SIGN-IN: ONE-TIME SETUP ============
@@ -4585,10 +4662,9 @@ a,button,[role="button"]{touch-action:manipulation;-webkit-tap-highlight-color:t
      { success, message?, data?: { token, user: { name, email, picture?, sub }, exp? } }
 
    POST /api/feedback          { name?, email?, rating, message, page_context }
+   POST /api/appointments      { token, name, email, phone, company, topic, datetime }
 */
 window.NINE_MERIDIAN_CONFIG = Object.freeze({
-  // The website is served by this API in production, so use the current origin
-  // instead of a development-only localhost address.
   BACKEND_URL: window.location.origin,
   GOOGLE_CLIENT_ID: window.NINE_MERIDIAN_RUNTIME_CONFIG?.googleClientId || '',
   AUTH_MODE: 'popup',
@@ -4601,7 +4677,9 @@ window.NINE_MERIDIAN_CONFIG = Object.freeze({
     emailStart: '/api/auth/email/start',
     emailVerify: '/api/auth/email/verify',
     feedback: '/api/feedback',
-    createOrder: '/api/payments/dodo/checkout',
+    appointments: '/api/appointments',
+    dodoCheckout: '/api/payments/dodo/checkout',
+    dodoSubscriptionCheckout: '/api/payments/dodo/subscriptions/checkout',
     googleConnect: '/api/google/connect',
     onboardingComplete: '/api/onboarding/complete'
   })
@@ -4609,11 +4687,11 @@ window.NINE_MERIDIAN_CONFIG = Object.freeze({
 
 (function(){
   "use strict";
- 
+
   /* ---- inject logo (kept out of markup once, applied to every .brand-logo) ---- */
   const LOGO_SRC = "data:image/webp;base64,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";
   document.querySelectorAll('.brand-logo').forEach(img => { img.src = LOGO_SRC; });
- 
+
   /* ---- header scroll state (drives the logo/wordmark "move on scroll") ---- */
   const header = document.getElementById('siteHeader');
   const scrollProgressFill = document.getElementById('scrollProgressFill');
@@ -4627,7 +4705,7 @@ window.NINE_MERIDIAN_CONFIG = Object.freeze({
   };
   onScroll();
   window.addEventListener('scroll', onScroll, {passive:true});
- 
+
   /* ---- mobile nav ---- */
   const navToggle = document.getElementById('navToggle');
   const mainNav = document.getElementById('mainNav');
@@ -4651,7 +4729,7 @@ window.NINE_MERIDIAN_CONFIG = Object.freeze({
   });
   const navBreakpoint = window.matchMedia('(max-width: 1099px)');
   navBreakpoint.addEventListener('change', event => { if(!event.matches) setNavOpen(false); });
- 
+
   /* ---- reveal on scroll ---- */
   const revealEls = document.querySelectorAll('.reveal');
   const io = new IntersectionObserver((entries) => {
@@ -4663,7 +4741,7 @@ window.NINE_MERIDIAN_CONFIG = Object.freeze({
     });
   }, {threshold:0.15});
   revealEls.forEach(el => io.observe(el));
- 
+
   /* ---- hero cursor spotlight ---- */
   const heroSection = document.getElementById('top');
   const heroSpotlight = document.getElementById('heroSpotlight');
@@ -4674,7 +4752,7 @@ window.NINE_MERIDIAN_CONFIG = Object.freeze({
       heroSpotlight.style.top = (e.clientY - rect.top) + 'px';
     });
   }
- 
+
   /* ---- count-up numbers ---- */
   const countEls = document.querySelectorAll('.count-target');
   const countIo = new IntersectionObserver((entries) => {
@@ -4698,7 +4776,7 @@ window.NINE_MERIDIAN_CONFIG = Object.freeze({
     });
   }, {threshold:0.4});
   countEls.forEach(el => countIo.observe(el));
- 
+
   /* ---- ROI calculator ---- */
   const roiVisitors = document.getElementById('roiVisitors');
   const roiMissed = document.getElementById('roiMissed');
@@ -4752,7 +4830,7 @@ window.NINE_MERIDIAN_CONFIG = Object.freeze({
     [roiVisitors, roiMissed, roiValue].forEach(el => el.addEventListener('input', calcRoi));
     calcRoi();
   }
- 
+
   /* ---- FAQ accordion ---- */
   document.querySelectorAll('.faq-item').forEach(item => {
     item.querySelector('.faq-q').addEventListener('click', () => {
@@ -4761,14 +4839,14 @@ window.NINE_MERIDIAN_CONFIG = Object.freeze({
       if (!isOpen) item.classList.add('is-open');
     });
   });
- 
+
   /* ---- live demo chatbot ---- */
   const demoMessages = document.getElementById('demoMessages');
   const demoForm = document.getElementById('demoForm');
   const demoInput = document.getElementById('demoInput');
   const demoHoneypot = document.getElementById('demoHoneypot');
   const demoSendBtn = demoForm.querySelector('.demo-send');
- 
+
   const RESPONSES = [
     { keys: ['price','pricing','cost','plan'], reply: "Plans start at $1,800 for unlimited conversations on one site. Team and multi-site plans are available too — want to book a call for a tailored quote?" },
     { keys: ['setup','install','integrate','integration'], reply: "Most businesses are live within a day. It's a single embed snippet, with one-click installs for Shopify, Webflow, and WordPress." },
@@ -4779,7 +4857,7 @@ window.NINE_MERIDIAN_CONFIG = Object.freeze({
     { keys: ['hello','hi','hey'], reply: "Hey there! Ask me about pricing, setup time, languages, or how the human handoff works." },
   ];
   const FALLBACK = "Good question — on the real assistant that'd be answered from your own docs. For this demo, try asking about pricing, setup, languages, or human handoff.";
- 
+
   // ---- basic abuse hardening for the public demo widget ----
   const DEMO_MAX_LEN = 120;
   const DEMO_MIN_INTERVAL_MS = 900;   // simple client-side rate limit
@@ -4787,7 +4865,7 @@ window.NINE_MERIDIAN_CONFIG = Object.freeze({
   let demoLastSentAt = 0;
   let demoMessageCount = 0;
   let demoLocked = false;
- 
+
   function sanitizeDemoInput(raw){
     // Strip tags/control chars defensively; bubbles already render via textContent,
     // this just keeps the underlying string clean if it's ever reused elsewhere.
@@ -4797,14 +4875,14 @@ window.NINE_MERIDIAN_CONFIG = Object.freeze({
       .slice(0, DEMO_MAX_LEN)
       .trim();
   }
- 
+
   function setDemoLocked(locked){
     demoLocked = locked;
     demoInput.disabled = locked;
     demoSendBtn.disabled = locked;
     document.querySelectorAll('.chip').forEach(c => c.disabled = locked);
   }
- 
+
   function addBubble(text, who){
     const b = document.createElement('div');
     b.className = 'bubble bubble-' + who;
@@ -4813,7 +4891,7 @@ window.NINE_MERIDIAN_CONFIG = Object.freeze({
     demoMessages.scrollTop = demoMessages.scrollHeight;
     return b;
   }
- 
+
   function botReply(userText){
     const lower = userText.toLowerCase();
     const typing = document.createElement('div');
@@ -4821,7 +4899,7 @@ window.NINE_MERIDIAN_CONFIG = Object.freeze({
     typing.innerHTML = '<span></span><span></span><span></span>';
     demoMessages.appendChild(typing);
     demoMessages.scrollTop = demoMessages.scrollHeight;
- 
+
     const match = RESPONSES.find(r => r.keys.some(k => lower.includes(k)));
     const delay = 650 + Math.random()*500;
     setTimeout(() => {
@@ -4830,7 +4908,7 @@ window.NINE_MERIDIAN_CONFIG = Object.freeze({
       setDemoLocked(false);
     }, delay);
   }
- 
+
   function sendMessage(rawText){
     if (demoLocked) return;
     // Honeypot: a hidden field only a script would fill in.
@@ -4851,37 +4929,62 @@ window.NINE_MERIDIAN_CONFIG = Object.freeze({
     addBubble(text, 'user');
     botReply(text);
   }
- 
+
   demoForm.addEventListener('submit', (e) => {
     e.preventDefault();
     sendMessage(demoInput.value);
     demoInput.value = '';
   });
- 
+
   document.querySelectorAll('.chip').forEach(chip => {
     chip.addEventListener('click', () => sendMessage(chip.dataset.msg));
   });
- 
+
+  /* ---- booking form ---- */
+  const bookingForm = document.getElementById('bookingForm');
+  const bookingSuccess = document.getElementById('bookingSuccess');
+  const bookingSuccessText = document.getElementById('bookingSuccessText');
+
+  bookingForm.addEventListener('submit', (e) => {
+    e.preventDefault();
+    if (typeof window.NineMeridianHandleBooking === 'function'){
+      window.NineMeridianHandleBooking({form:bookingForm, success:bookingSuccess, successText:bookingSuccessText});
+      return;
+    }
+    const data = new FormData(bookingForm);
+    // Honeypot check — bots fill hidden fields, humans never see them.
+    if ((data.get('hp_field') || '').toString().trim() !== ''){
+      return;
+    }
+    const name = (data.get('name') || '').toString().split(' ')[0] || 'there';
+    const date = data.get('date');
+    const time = data.get('time');
+    bookingSuccessText.textContent = date && time
+      ? `Thanks, ${name} — we'll see you on ${date} at ${time}. A calendar invite is on its way to your inbox.`
+      : `Thanks, ${name} — a calendar invite is on its way to your inbox.`;
+    bookingForm.hidden = true;
+    bookingSuccess.hidden = false;
+  });
 })();
- 
+
 </script>
 <script>
- 
+
 (function(){
   "use strict";
- 
+
   const form = document.getElementById('setupForm');
   const steps = Array.from(form.querySelectorAll('.form-step'));
   const total = steps.length;
   let current = 1;
- 
+
   const stepLabel = document.getElementById('stepLabel');
   const stepTitle = document.getElementById('stepTitle');
   const track = document.getElementById('progressTrack');
   const backBtn = document.getElementById('backBtn');
   const nextBtn = document.getElementById('nextBtn');
   const submitBtn = document.getElementById('submitBtn');
- 
+
   /* build progress dots */
   steps.forEach((s, i) => {
     const dot = document.createElement('span');
@@ -4891,7 +4994,7 @@ window.NINE_MERIDIAN_CONFIG = Object.freeze({
     track.appendChild(dot);
   });
   const dots = Array.from(track.children);
- 
+
   function trackAfterWidth(pct){
     let styleTag = document.getElementById('trackDynamicStyle');
     if(!styleTag){
@@ -4901,7 +5004,7 @@ window.NINE_MERIDIAN_CONFIG = Object.freeze({
     }
     styleTag.textContent = `.progress-track::after{width:${pct}%;}`;
   }
- 
+
   function renderProgress(){
     stepLabel.textContent = `Step ${current} of ${total}`;
     stepTitle.textContent = steps[current-1].dataset.title;
@@ -4912,7 +5015,7 @@ window.NINE_MERIDIAN_CONFIG = Object.freeze({
     });
     trackAfterWidth(((current - 1) / (total - 1)) * 100);
   }
- 
+
   function showStep(n){
     steps.forEach(s => s.classList.toggle('is-active', Number(s.dataset.step) === n));
     backBtn.disabled = n === 1;
@@ -4921,22 +5024,22 @@ window.NINE_MERIDIAN_CONFIG = Object.freeze({
     renderProgress();
     window.scrollTo({top: form.offsetTop - 20, behavior:'smooth'});
   }
- 
+
   function setFieldError(field, isError){
     field.classList.toggle('error', isError);
   }
- 
+
   function validateStep(n){
     const step = steps[n-1];
     let valid = true;
- 
+
     step.querySelectorAll('.field[data-required] input, .field[data-required] select, .field[data-required] textarea').forEach(input => {
       const field = input.closest('.field');
       const ok = input.value.trim() !== '';
       setFieldError(field, !ok);
       if (!ok) valid = false;
     });
- 
+
     step.querySelectorAll('[data-group][data-required]').forEach(group => {
       const name = group.dataset.group;
       const checked = step.querySelector(`input[name="${name}"]:checked`);
@@ -4944,7 +5047,7 @@ window.NINE_MERIDIAN_CONFIG = Object.freeze({
       setFieldError(group, !ok);
       if (!ok) valid = false;
     });
- 
+
     if (n === total){
       const c1 = document.getElementById('confirmCorrect').checked;
       const c2 = document.getElementById('authorizeAccounts').checked;
@@ -4954,10 +5057,10 @@ window.NINE_MERIDIAN_CONFIG = Object.freeze({
       err.style.display = ok ? 'none' : 'block';
       if (!ok) valid = false;
     }
- 
+
     return valid;
   }
- 
+
   nextBtn.addEventListener('click', () => {
     if (!validateStep(current)) return;
     if (current < total){
@@ -4971,7 +5074,7 @@ window.NINE_MERIDIAN_CONFIG = Object.freeze({
       showStep(current);
     }
   });
- 
+
   form.addEventListener('input', (e) => {
     const field = e.target.closest('.field');
     if (field) field.classList.remove('error');
@@ -4980,7 +5083,7 @@ window.NINE_MERIDIAN_CONFIG = Object.freeze({
     const group = e.target.closest('[data-group]');
     if (group) group.classList.remove('error');
   });
- 
+
   /* conditional: CRM sub-fields */
   const crmConditional = document.getElementById('crmConditional');
   const crmOtherConditional = document.getElementById('crmOtherConditional');
@@ -4993,7 +5096,7 @@ window.NINE_MERIDIAN_CONFIG = Object.freeze({
   crmChoice.addEventListener('change', () => {
     crmOtherConditional.classList.toggle('is-open', crmChoice.value === 'Other');
   });
- 
+
   /* conditional: human transfer staff fields */
   const transferConditional = document.getElementById('transferConditional');
   form.querySelectorAll('input[name="transferHuman"]').forEach(r => {
@@ -5001,7 +5104,7 @@ window.NINE_MERIDIAN_CONFIG = Object.freeze({
       transferConditional.classList.toggle('is-open', document.getElementById('transferYes').checked);
     });
   });
- 
+
   /* submit */
   const successPanel = document.getElementById('successPanel');
   const successCompany = document.getElementById('successCompany');
@@ -5009,16 +5112,16 @@ window.NINE_MERIDIAN_CONFIG = Object.freeze({
   const onboardingSaveStatus = document.getElementById('onboardingSaveStatus');
   const connectGoogleBtn = document.getElementById('connectGoogleBtn');
   let lastPayloadText = '';
- 
+
   function setOnboardingStatus(message, type){
     onboardingSaveStatus.className = 'pay-status' + (type ? ' ' + type : '');
     onboardingSaveStatus.textContent = message || '';
   }
- 
+
   function setupToken(){
     return sessionStorage.getItem('9m_setup_token') || '';
   }
- 
+
   function buildOnboardingPayload(fd){
     const get = (k) => (fd.get(k) || '').toString().trim();
     const getAll = (k) => fd.getAll(k).map(v => String(v));
@@ -5056,7 +5159,7 @@ window.NINE_MERIDIAN_CONFIG = Object.freeze({
       additionalNotes: get('additionalNotes')
     };
   }
- 
+
   async function connectGoogle(){
     const token = setupToken();
     if (!token){
@@ -5080,28 +5183,28 @@ window.NINE_MERIDIAN_CONFIG = Object.freeze({
       connectGoogleBtn.textContent = 'Connect your Google account →';
     }
   }
- 
+
   connectGoogleBtn.addEventListener('click', connectGoogle);
- 
+
   form.addEventListener('submit', async (e) => {
     e.preventDefault();
     if (!validateStep(total)) return;
- 
+
     const token = setupToken();
     if (!token){
       setOnboardingStatus('Your onboarding session is missing or expired. Please return to payment and start onboarding again.', 'error');
       return;
     }
- 
+
     const fd = new FormData(form);
     const get = (k) => (fd.get(k) || '').toString().trim();
     const getAll = (k) => fd.getAll(k);
     const payload = buildOnboardingPayload(fd);
- 
+
     setOnboardingStatus('Saving your onboarding configuration securely…', '');
     submitBtn.disabled = true;
     submitBtn.textContent = 'Saving…';
- 
+
     try{
       const r = await fetch(`${window.NINE_MERIDIAN_CONFIG.BACKEND_URL}${window.NINE_MERIDIAN_CONFIG.ENDPOINTS.onboardingComplete}`, {
         method: 'POST',
@@ -5114,7 +5217,7 @@ window.NINE_MERIDIAN_CONFIG = Object.freeze({
       if(!r.ok || !result.success){
         throw new Error(result.message || 'Could not save onboarding.');
       }
- 
+
       const summaryRows = [
         ['Company', get('companyName')],
         ['Contact', `${get('ownerName')} · ${get('businessEmail')} · ${get('phone')}`],
@@ -5127,10 +5230,10 @@ window.NINE_MERIDIAN_CONFIG = Object.freeze({
         ['Human transfer', get('transferHuman') || '—'],
         ['Notifications', getAll('notify').join(', ') || '—'],
       ];
- 
+
       successCompany.textContent = get('companyName') || 'your business';
       successSummary.innerHTML = summaryRows.map(([k,v]) => `<dt>${k}</dt><dd>${v}</dd>`).join('');
- 
+
       const allFields = [
         ['Company Name', get('companyName')],
         ['Owner / Decision Maker', get('ownerName')],
@@ -5164,13 +5267,13 @@ window.NINE_MERIDIAN_CONFIG = Object.freeze({
       ];
       lastPayloadText = 'AI RECEPTIONIST SETUP — 9 MERIDIAN\nSubmitted: ' + new Date().toLocaleString() + '\n\n' +
         allFields.map(([k,v]) => `${k}: ${v || '—'}`).join('\n');
- 
+
       form.hidden = true;
       document.querySelector('.progress-block').hidden = true;
       document.querySelector('.intro').hidden = true;
       successPanel.hidden = false;
       setOnboardingStatus('✓ Saved to your client workspace. Your configuration, services, business settings and agent draft are now stored.', 'success');
- 
+
       const googleRequired = result.data?.google_required;
       if (googleRequired){
         connectGoogleBtn.style.display = 'inline-flex';
@@ -5178,7 +5281,7 @@ window.NINE_MERIDIAN_CONFIG = Object.freeze({
       } else {
         connectGoogleBtn.style.display = 'none';
       }
- 
+
       window.scrollTo({top: 0, behavior:'smooth'});
     }catch(err){
       setOnboardingStatus(err.message || 'Could not save onboarding.', 'error');
@@ -5186,7 +5289,7 @@ window.NINE_MERIDIAN_CONFIG = Object.freeze({
       submitBtn.textContent = '🚀 Build My AI Receptionist';
     }
   });
- 
+
   document.getElementById('downloadBtn').addEventListener('click', () => {
     const blob = new Blob([lastPayloadText], {type:'text/plain'});
     const url = URL.createObjectURL(blob);
@@ -5198,14 +5301,14 @@ window.NINE_MERIDIAN_CONFIG = Object.freeze({
     a.remove();
     URL.revokeObjectURL(url);
   });
- 
+
   showStep(1);
 })();
- 
+
 </script>
 <script>
- 
- 
+
+
 </script>
 <script>
 /* ============ VIEW ROUTER + PAYMENT ============ */
@@ -5214,7 +5317,7 @@ window.NINE_MERIDIAN_CONFIG = Object.freeze({
   const VIEW_MAP={'index.html':'view-home','./index.html':'view-home','setup-form.html':'view-setup','./setup-form.html':'view-setup','privacy-policy.html':'view-privacy','./privacy-policy.html':'view-privacy'};
   const HASH_MAP={'entry':'view-entry','login':'view-entry','home':'view-home','setup-form':'view-setup','privacy-policy':'view-privacy','payment':'view-payment'};
   const REVERSE_HASH={'view-entry':'entry','view-home':'home','view-setup':'setup-form','view-privacy':'privacy-policy','view-payment':'payment'};
-  const KNOWN_SECTIONS=new Set(['top','about','why','features','compare','pricing','roi','demo','faq','feedback','feedback-form']);
+  const KNOWN_SECTIONS=new Set(['top','about','why','features','compare','pricing','roi','demo','booking','faq','feedback','feedback-form']);
   function hasValidSession(){
     if(window['9MAuth'])return !!window['9MAuth'].getUser();
     try{const s=JSON.parse(localStorage.getItem('9m_session')||'null');return !!(s&&s.provider==='google'&&s.sub&&s.email&&Number(s.exp)>Date.now()/1000);}catch(_){return false;}
@@ -5237,7 +5340,7 @@ window.NINE_MERIDIAN_CONFIG = Object.freeze({
   }
   window.show9MView=showView;
   function goToPayment(plan){
-    const selected=plan||sessionStorage.getItem('9m_selected_plan')||'Starter';
+  const selected=plan||sessionStorage.getItem('9m_selected_plan')||'Dual Bot Pack';
     const ready=window['9MAuth']?.gateAction({intent:'purchase',returnTo:'payment',onStart:()=>{
       sessionStorage.setItem('9m_selected_plan',selected);document.getElementById('paymentPlanName').textContent=selected;
     }});
@@ -5257,19 +5360,75 @@ window.NINE_MERIDIAN_CONFIG = Object.freeze({
   window.addEventListener('hashchange',function(){routeFromHash({skipHistory:false})});
   document.addEventListener('DOMContentLoaded',function(){routeFromHash({skipScroll:true})});
 
-  // API requests use the same deployed origin configured above.
+  // TODO(9meridian): this still points at localhost — before going live, replace with your
+  // real deployed backend URL (e.g. https://api.9meridian.com), or Razorpay order creation will fail in production.
   const createOrderEndpoint=window.NINE_MERIDIAN_CONFIG.BACKEND_URL+window.NINE_MERIDIAN_CONFIG.ENDPOINTS.createOrder;
+  const verifyEndpoint=window.NINE_MERIDIAN_CONFIG.BACKEND_URL+window.NINE_MERIDIAN_CONFIG.ENDPOINTS.verifyPayment;
   const track=document.getElementById('swipeTrack'),handle=document.getElementById('swipeHandle'),fill=document.getElementById('swipeFill'),swipeLabel=document.getElementById('swipeLabel'),status=document.getElementById('payStatus'),amountEl=document.getElementById('paymentAmount'),success=document.getElementById('paymentSuccess'),checkoutArea=document.getElementById('paymentCheckoutArea'),successText=document.getElementById('paymentSuccessText'),continueBtn=document.getElementById('continueOnboarding');
   let dragging=false,completed=false;
   function setStatus(msg,type){status.className='pay-status'+(type?' '+type:'');status.textContent=msg||''}
   function resetSwipe(){dragging=false;completed=false;handle.style.left='4px';fill.style.width='0px';swipeLabel.style.opacity='1';swipeLabel.textContent='Swipe to unlock payment →';handle.textContent='→'}
   function validate(){const name=document.getElementById('payName').value.trim(),email=document.getElementById('payEmail').value.trim(),phone=document.getElementById('payPhone').value.trim(),business=document.getElementById('payBusiness').value.trim();if(!name||!email||!phone||!business){setStatus('Please complete your name, business name, email and phone first.','error');return null}if(!/^\S+@\S+\.\S+$/.test(email)){setStatus('Please enter a valid business email.','error');return null}return{name,email,phone,business}}
-  async function startPayment(){if(completed)return;const customer=validate();if(!customer){resetSwipe();return}const plan=sessionStorage.getItem('9m_selected_plan')||'Dual Bot Pack';completed=true;handle.textContent='✓';swipeLabel.textContent='Opening secure checkout…';setStatus('Creating your secure Dodo checkout…','');try{const r=await fetch(createOrderEndpoint,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({business_name:customer.business,owner_name:customer.name,email:customer.email,phone:customer.phone,plan})});const raw=await r.text();let result;try{result=JSON.parse(raw)}catch{throw new Error('Backend returned invalid JSON while creating checkout.')}const checkout=result.data;if(!r.ok||!result.success||!checkout?.checkout_url)throw new Error(result.message||result.error||'Could not create secure checkout.');sessionStorage.setItem('9m_checkout_session_id',checkout.session_id);document.getElementById('paymentPlanName').textContent=checkout.plan||plan;window.location.assign(checkout.checkout_url)}catch(err){completed=false;resetSwipe();setStatus(err.message||'Something went wrong while starting payment.','error')}}
-  async function checkConfirmedPayment(){const sessionId=sessionStorage.getItem('9m_checkout_session_id');if(!sessionId)return;try{const r=await fetch(window.NINE_MERIDIAN_CONFIG.BACKEND_URL+'/api/payments/dodo/status/'+encodeURIComponent(sessionId),{cache:'no-store'});const result=await r.json();const data=result.data;if(!r.ok||!result.success||data?.status!=='paid'||!data.client_id)return;sessionStorage.setItem('9m_client_id',data.client_id);if(data.setup_token)sessionStorage.setItem('9m_setup_token',data.setup_token);checkoutArea.style.display='none';success.classList.add('is-visible');successText.textContent='Payment confirmed. Your onboarding can continue.';sessionStorage.removeItem('9m_checkout_session_id')}catch{/* Confirmation remains webhook-authoritative; retry when the page is revisited. */}}
+  async function startPayment(){if(completed)return;const customer=validate();if(!customer){resetSwipe();return}const plan=sessionStorage.getItem('9m_selected_plan')||'Starter';completed=true;handle.textContent='✓';swipeLabel.textContent='Creating secure order…';setStatus('Creating your secure Razorpay order…','');try{const r=await fetch(createOrderEndpoint,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({business_name:customer.business,owner_name:customer.name,email:customer.email,phone:customer.phone,plan})});const raw=await r.text();let result;try{result=JSON.parse(raw)}catch{throw new Error('Backend returned invalid JSON while creating the order.')}if(!r.ok||!result.success||!result.data?.order_id)throw new Error(result.message||result.error||'Could not create Razorpay order.');const order=result.data;const displayAmount=Number(order.amount||0)/100;amountEl.innerHTML=`${order.currency||'INR'} ${displayAmount.toLocaleString('en-IN')} <small>server-priced</small>`;document.getElementById('paymentPlanName').textContent=order.plan||plan;if(typeof Razorpay==='undefined')throw new Error('Razorpay Checkout could not be loaded. Please refresh the page.');const rzp=new Razorpay({key:order.key_id,amount:order.amount,currency:order.currency,order_id:order.order_id,name:'9 Meridian',description:`${order.plan||plan} — AI Receptionist`,prefill:{name:customer.name,email:customer.email,contact:customer.phone},theme:{color:'#2f8fff'},handler:async function(response){setStatus('Payment completed. Verifying it securely with your backend…','');try{const vr=await fetch(verifyEndpoint,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({razorpay_order_id:response.razorpay_order_id,razorpay_payment_id:response.razorpay_payment_id,razorpay_signature:response.razorpay_signature})});const rawv=await vr.text();let resultv;try{resultv=JSON.parse(rawv)}catch{throw new Error('Backend returned invalid JSON during verification.')}if(!vr.ok||!resultv.success)throw new Error(resultv.message||resultv.error||'Payment verification failed.');const data=resultv.data||{};if(data.client_id)sessionStorage.setItem('9m_client_id',data.client_id);if(data.setup_token)sessionStorage.setItem('9m_setup_token',data.setup_token);sessionStorage.setItem('9m_order_id',data.order_id||response.razorpay_order_id);sessionStorage.setItem('9m_payment_id',response.razorpay_payment_id);checkoutArea.style.display='none';success.classList.add('is-visible');successText.textContent=data.client_id?`Payment verified successfully. Client ${data.client_id} has been created and your onboarding can continue.`:'Payment verified successfully. Your order is confirmed and onboarding can continue.';resetSwipe()}catch(err){completed=false;resetSwipe();setStatus(`Payment reached Razorpay, but backend verification failed.\n\n${err.message}`,'error')}}});rzp.on('payment.failed',function(response){completed=false;resetSwipe();setStatus(`Payment failed.\n\n${response.error?.description||'Please try again.'}`,'error')});rzp.open()}catch(err){completed=false;resetSwipe();setStatus(err.message||'Something went wrong while starting payment.','error')}}
   function moveSwipe(clientX){if(!dragging||completed)return;const rect=track.getBoundingClientRect(),max=rect.width-handle.offsetWidth-8,x=Math.max(0,Math.min(max,clientX-rect.left-handle.offsetWidth/2));handle.style.left=(4+x)+'px';fill.style.width=(x+handle.offsetWidth/2+4)+'px';const progress=x/max;swipeLabel.style.opacity=String(Math.max(.15,1-progress*1.2));if(progress>=.88)startPayment()}
   handle.addEventListener('pointerdown',e=>{if(!completed){dragging=true;handle.setPointerCapture(e.pointerId)}});handle.addEventListener('pointermove',e=>moveSwipe(e.clientX));handle.addEventListener('pointerup',()=>{if(!completed&&dragging)resetSwipe()});handle.addEventListener('pointercancel',()=>{if(!completed)resetSwipe()});continueBtn.addEventListener('click',()=>showView('view-setup'));
   const savedPlan=sessionStorage.getItem('9m_selected_plan');if(savedPlan)document.getElementById('paymentPlanName').textContent=savedPlan;
-  void checkConfirmedPayment();
+})();
+</script>
+<script>
+/* Dodo hosted checkout. Capture swipe events before the legacy checkout
+   handler so this page always uses the current server-side payment flow. */
+(() => {
+  const track = document.getElementById('swipeTrack');
+  const handle = document.getElementById('swipeHandle');
+  const fill = document.getElementById('swipeFill');
+  const label = document.getElementById('swipeLabel');
+  const status = document.getElementById('payStatus');
+  if (!track || !handle || !fill || !label || !status) return;
+
+  let dragging = false;
+  let starting = false;
+  const setStatus = (message, type = '') => { status.className = `pay-status${type ? ` ${type}` : ''}`; status.textContent = message; };
+  const reset = () => { dragging = false; starting = false; handle.style.left = '4px'; fill.style.width = '0'; label.style.opacity = '1'; label.textContent = 'Swipe to unlock payment →'; handle.textContent = '→'; };
+  const customer = () => {
+    const owner_name = document.getElementById('payName')?.value.trim();
+    const email = document.getElementById('payEmail')?.value.trim();
+    const phone = document.getElementById('payPhone')?.value.trim();
+    const business_name = document.getElementById('payBusiness')?.value.trim();
+    if (!owner_name || !email || !phone || !business_name) throw new Error('Please complete your name, business name, email and phone first.');
+    if (!/^\S+@\S+\.\S+$/.test(email)) throw new Error('Please enter a valid business email.');
+    return { owner_name, email, phone, business_name };
+  };
+  const start = async () => {
+    if (starting) return;
+    try {
+      starting = true; handle.textContent = '✓'; label.textContent = 'Opening secure checkout…';
+      const plan = sessionStorage.getItem('9m_selected_plan') || 'Dual Bot Pack';
+      const response = await fetch(`${window.NINE_MERIDIAN_CONFIG.BACKEND_URL}${window.NINE_MERIDIAN_CONFIG.ENDPOINTS.dodoCheckout}`, {
+        method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ ...customer(), plan }),
+      });
+      const result = await response.json().catch(() => null);
+      if (!response.ok || !result?.success || !result.data?.checkout_url) throw new Error(result?.message || 'Unable to start secure checkout. Please try again.');
+      window.location.assign(result.data.checkout_url);
+    } catch (error) {
+      setStatus(error instanceof Error ? error.message : 'Unable to start secure checkout.', 'error');
+      reset();
+    }
+  };
+  const onDown = (event) => { if (starting) return; dragging = true; handle.setPointerCapture?.(event.pointerId); event.stopPropagation(); };
+  const onMove = (event) => {
+    if (!dragging || starting) return;
+    event.stopPropagation();
+    const rect = track.getBoundingClientRect(); const max = Math.max(1, rect.width - handle.offsetWidth - 8);
+    const x = Math.max(0, Math.min(max, event.clientX - rect.left - handle.offsetWidth / 2));
+    handle.style.left = `${4 + x}px`; fill.style.width = `${x + handle.offsetWidth / 2 + 4}px`; label.style.opacity = String(Math.max(.15, 1 - (x / max) * 1.2));
+    if (x / max >= .88) start();
+  };
+  const onEnd = (event) => { if (!starting && dragging) reset(); event.stopPropagation(); };
+  document.addEventListener('pointerdown', event => { if (event.target === handle) onDown(event); }, true);
+  document.addEventListener('pointermove', event => { if (dragging) onMove(event); }, true);
+  document.addEventListener('pointerup', onEnd, true);
+  document.addEventListener('pointercancel', onEnd, true);
 })();
 </script>
 <script>
@@ -5281,6 +5440,7 @@ window.NINE_MERIDIAN_CONFIG = Object.freeze({
   const OAUTH_STATE_KEY='9m_google_oauth_state';
   const OUTBOX_KEY='9m_feedback_outbox';
   const AUTH_INTENT_KEY='9m_auth_intent';
+  const PENDING_BOOKING_KEY='9m_pending_booking';
   const EMAIL_RE=/^[^\s@]+@[^\s@]+\.[^\s@]+$/;
   const endpoint=key=>CONFIG.BACKEND_URL+CONFIG.ENDPOINTS[key];
   const AUTH_PROOF=Symbol('verified-google-auth');
@@ -5294,7 +5454,7 @@ window.NINE_MERIDIAN_CONFIG = Object.freeze({
     authOptions:document.getElementById('loginAuthOptions'),setupPanel:document.getElementById('loginSetupPanel'),
     googleContainer:document.getElementById('googleButtonContainer'),redirectButton:document.getElementById('googleRedirectButton'),
     emailDisabled:document.getElementById('emailAuthDisabled'),serverNotice:document.getElementById('serverSessionNotice'),
-    authContext:document.getElementById('entryAuthContext')
+    authContext:document.getElementById('entryAuthContext'),bookingNotice:document.getElementById('bookingAuthNotice')
   };
   let toastTimer=0;
   function showToast(message){
@@ -5330,25 +5490,43 @@ window.NINE_MERIDIAN_CONFIG = Object.freeze({
     if(user){els.name.textContent=user.name||user.email;paintAvatar(els.avatar,user);}
     const noticeDismissed=session&&sessionStorage.getItem(`9m_server_notice_dismissed_${session.sub}`)==='1';
     els.serverNotice?.classList.toggle('is-visible',!!session&&session.token===null&&!noticeDismissed);
+    prefillBooking();
+  }
+  function prefillBooking(){
+    const user=readSession()?.user;const form=document.getElementById('bookingForm');if(!user||!form)return;
+    const name=form.elements.namedItem('name'),email=form.elements.namedItem('email');
+    if(name&&!name.value)name.value=user.name||'';if(email&&!email.value)email.value=user.email||'';
   }
   function readAuthIntent(){try{return JSON.parse(sessionStorage.getItem(AUTH_INTENT_KEY)||'null');}catch(_){return null;}}
   function syncAuthContext(){
     const pending=readAuthIntent();let message='';
-    if(pending?.intent==='purchase')message='Sign in to continue your purchase';
+    if(pending?.intent==='booking')message='Sign in to book your appointment';
+    else if(pending?.intent==='purchase')message='Sign in to continue your purchase';
     els.authContext.textContent=message;els.authContext.hidden=!message;
   }
-  function clearGateContext(clearReturn=false){sessionStorage.removeItem(AUTH_INTENT_KEY);if(clearReturn)sessionStorage.removeItem('9m_return_to');syncAuthContext();}
+  function clearGateContext(clearReturn=false){sessionStorage.removeItem(AUTH_INTENT_KEY);if(clearReturn)sessionStorage.removeItem('9m_return_to');els.bookingNotice.hidden=true;syncAuthContext();}
   function normalizeReturnTo(value){const target=String(value||'home');return target.startsWith('#')?target:'#'+target;}
   function gateAction({intent,returnTo,onStart}={}){
     const session=readSession();
     if(typeof onStart==='function')onStart({authenticated:!!session,user:session?.user||null});
     if(session)return true;
-    const destination=normalizeReturnTo(returnTo||(intent==='purchase'?'payment':'home'));
+    const destination=normalizeReturnTo(returnTo||(intent==='purchase'?'payment':'booking'));
     sessionStorage.setItem('9m_return_to',destination);
     sessionStorage.setItem(AUTH_INTENT_KEY,JSON.stringify({intent:String(intent||''),returnTo:destination}));
     syncAuthContext();
     window.show9MView?.('view-entry',{allowEntry:true,replaceHistory:true});
     return false;
+  }
+  function savePendingBooking(form){
+    const values={};new FormData(form).forEach((value,key)=>{if(key!=='hp_field')values[key]=String(value);});
+    sessionStorage.setItem(PENDING_BOOKING_KEY,JSON.stringify(values));
+  }
+  function restorePendingBooking(){
+    const form=document.getElementById('bookingForm');if(!form)return false;
+    let values;try{values=JSON.parse(sessionStorage.getItem(PENDING_BOOKING_KEY)||'null');}catch(_){values=null;}
+    if(!values||typeof values!=='object')return false;
+    Object.entries(values).forEach(([name,value])=>{const control=form.elements.namedItem(name);if(control&&'value' in control)control.value=String(value);});
+    return true;
   }
   function logout(){
     const session=readSession();const email=session&&session.email;
@@ -5377,6 +5555,10 @@ window.NINE_MERIDIAN_CONFIG = Object.freeze({
         if(destination!=='#home')setTimeout(()=>document.querySelector(destination)?.scrollIntoView({behavior:reduced?'auto':'smooth',block:'start'}),40);
         history.replaceState({},'',destination);
       }
+      if(intent?.intent==='booking'&&destination==='#booking'){
+        restorePendingBooking();prefillBooking();els.bookingNotice.hidden=true;
+        setTimeout(()=>document.getElementById('bookingForm')?.requestSubmit(),100);
+      }else prefillBooking();
       if(destination!=='#payment')showToast(`Signed in as ${user.name||user.email}`);
     },reduced?40:920);
   }
@@ -5547,6 +5729,20 @@ window.NINE_MERIDIAN_CONFIG = Object.freeze({
   els.chip.addEventListener('click',()=>{const open=!els.user.classList.contains('is-open');els.user.classList.toggle('is-open',open);els.chip.setAttribute('aria-expanded',String(open));});
   document.addEventListener('click',e=>{if(!els.user.contains(e.target)){els.user.classList.remove('is-open');els.chip.setAttribute('aria-expanded','false');}});
   document.getElementById('logoutButton').addEventListener('click',logout);
+
+  window.NineMeridianHandleBooking=async({form,success,successText})=>{
+    if(!window['9MAuth'].gateAction({intent:'booking',returnTo:'booking',onStart:({authenticated})=>{if(!authenticated){savePendingBooking(form);els.bookingNotice.hidden=false;}}}))return;
+    if(!form.reportValidity())return;
+    const data=new FormData(form);if(String(data.get('hp_field')||'').trim())return;
+    const session=readSession();const button=form.querySelector('.form-submit');const status=document.getElementById('bookingApiStatus');
+    const name=String(data.get('name')||''),date=String(data.get('date')||''),time=String(data.get('time')||'');
+    const payload={token:session.token,name,email:String(data.get('email')||''),phone:String(data.get('phone')||''),company:String(data.get('company')||''),topic:String(data.get('topic')||''),datetime:date&&time?new Date(`${date}T${time}`).toISOString():''};
+    button.disabled=true;button.textContent='Confirming…';status.textContent='Saving your appointment securely…';
+    try{await requestJSON(endpoint('appointments'),{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(payload)},8000);status.textContent='';}
+    catch(_){status.textContent='Backend unavailable — showing the existing local confirmation fallback.';}
+    const first=name.split(' ')[0]||'there';successText.textContent=date&&time?`Thanks, ${first} — we'll see you on ${date} at ${time}. A calendar invite is on its way to your inbox.`:`Thanks, ${first} — a calendar invite is on its way to your inbox.`;
+    sessionStorage.removeItem(PENDING_BOOKING_KEY);els.bookingNotice.hidden=true;form.hidden=true;success.hidden=false;button.disabled=false;button.textContent='Confirm Booking';
+  };
 
   function getOutbox(){try{const value=JSON.parse(localStorage.getItem(OUTBOX_KEY)||'[]');return Array.isArray(value)?value:[];}catch(_){return[];}}
   function saveOutbox(items){localStorage.setItem(OUTBOX_KEY,JSON.stringify(items));}
