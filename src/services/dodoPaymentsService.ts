@@ -148,13 +148,24 @@ export class DodoPaymentsService {
     return { session_id: session.session_id, checkout_url: session.checkout_url, plan, payment_type: paymentType };
   }
 
-  static async getCheckoutStatus(sessionId: string): Promise<{ status: string; client_id: string | null; setup_token: string | null }> {
-    const { data: order, error } = await supabase
+  static async getCheckoutStatus(paymentReference: string): Promise<{ status: string; client_id: string | null; setup_token: string | null }> {
+    // The hosted checkout return URL contains Dodo's payment_id, while our
+    // create response contains a checkout session ID. Support both without
+    // trusting either as proof of payment; fulfilment remains webhook-only.
+    let { data: order, error } = await supabase
       .from("orders")
       .select("status,client_id")
       .eq("provider", "dodo")
-      .eq("provider_order_id", sessionId)
+      .eq("provider_order_id", paymentReference)
       .maybeSingle();
+    if (!order && !error) {
+      ({ data: order, error } = await supabase
+        .from("orders")
+        .select("status,client_id")
+        .eq("provider", "dodo")
+        .eq("provider_payment_id", paymentReference)
+        .maybeSingle());
+    }
     if (error) throw new AppError("Unable to check the payment status.", 500);
     if (!order) throw new AppError("Payment checkout not found.", 404);
     if (!order.client_id) return { status: String(order.status ?? "created"), client_id: null, setup_token: null };

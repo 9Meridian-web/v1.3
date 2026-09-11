@@ -5409,6 +5409,7 @@ window.NINE_MERIDIAN_CONFIG = Object.freeze({
       });
       const result = await response.json().catch(() => null);
       if (!response.ok || !result?.success || !result.data?.checkout_url) throw new Error(result?.message || 'Unable to start secure checkout. Please try again.');
+      sessionStorage.setItem('9m_dodo_checkout_session_id', result.data.session_id);
       window.location.assign(result.data.checkout_url);
     } catch (error) {
       setStatus(error instanceof Error ? error.message : 'Unable to start secure checkout.', 'error');
@@ -5429,6 +5430,40 @@ window.NINE_MERIDIAN_CONFIG = Object.freeze({
   document.addEventListener('pointermove', event => { if (dragging) onMove(event); }, true);
   document.addEventListener('pointerup', onEnd, true);
   document.addEventListener('pointercancel', onEnd, true);
+
+  const delay = milliseconds => new Promise(resolve => setTimeout(resolve, milliseconds));
+  const resumePaidCheckout = async () => {
+    const params = new URLSearchParams(window.location.search);
+    if (params.get('status') !== 'succeeded') return;
+
+    const reference = params.get('payment_id') || sessionStorage.getItem('9m_dodo_checkout_session_id');
+    if (!reference) return;
+
+    // Keep the payment query private once it has been read, and wait for the
+    // signed Dodo webhook to create the client before unlocking onboarding.
+    history.replaceState({}, '', `${window.location.pathname}#payment`);
+    setStatus('Payment received. Preparing your secure onboarding…', '');
+    for (let attempt = 0; attempt < 12; attempt += 1) {
+      try {
+        const response = await fetch(`${window.NINE_MERIDIAN_CONFIG.BACKEND_URL}/api/payments/dodo/status/${encodeURIComponent(reference)}`, { cache: 'no-store' });
+        const result = await response.json().catch(() => null);
+        const order = result?.data;
+        if (response.ok && order?.client_id && order?.setup_token) {
+          sessionStorage.setItem('9m_client_id', order.client_id);
+          sessionStorage.setItem('9m_setup_token', order.setup_token);
+          sessionStorage.setItem('9m_payment_id', params.get('payment_id') || reference);
+          window.location.hash = 'setup-form';
+          return;
+        }
+      } catch {
+        // A transient network failure is safe to retry; payment fulfilment is
+        // still verified exclusively by the signed webhook on the server.
+      }
+      await delay(1500);
+    }
+    setStatus('Your payment is confirmed and onboarding is being prepared. Please refresh this page in a moment.', '');
+  };
+  resumePaidCheckout();
 })();
 </script>
 <script>
