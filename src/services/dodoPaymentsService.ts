@@ -120,7 +120,6 @@ export class DodoPaymentsService {
       session = await dodoClient().checkoutSessions.create({
         product_cart: [{ product_id: productId, quantity: 1 }],
         customer: { email: metadata.email, name: metadata.owner_name, phone_number: metadata.phone },
-        customer_business_name: metadata.business_name,
         metadata,
         return_url: env.DODO_CHECKOUT_RETURN_URL,
         cancel_url: env.DODO_CHECKOUT_CANCEL_URL,
