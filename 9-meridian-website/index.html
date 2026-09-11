@@ -5657,6 +5657,9 @@ window.NINE_MERIDIAN_CONFIG = Object.freeze({
         if(signupContainer){signupContainer.replaceChildren();window.google.accounts.id.renderButton(signupContainer,{theme:'filled_black',size:'medium',shape:'rectangular',text:'signup_with',width:86});}
         setTimeout(()=>{if(!els.googleContainer.firstElementChild)setLoginStatus(googleEnvironmentMessage(),'error');},900);
       }
+      // The Google script can load after the first paint on slower mobile
+      // connections. Remove the temporary loading message once it is ready.
+      setLoginStatus('','');
       googleInitialized=true;
     }catch(_){setLoginStatus(googleEnvironmentMessage(),'error');}
   }
