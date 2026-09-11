@@ -61,6 +61,22 @@ function normalizePlan(plan: string | undefined): SupportedPlan {
   throw new AppError("Invalid payment plan.", 400);
 }
 
+/**
+ * Dodo requires an E.164 telephone number. The public checkout form is aimed
+ * at Indian businesses, so accept the common 10-digit Indian format as a
+ * convenience and store/send its canonical international form.
+ */
+function normalizePhoneNumber(phone: string): string {
+  const cleaned = phone.trim().replace(/[\s().-]/g, "");
+  const e164 = cleaned.startsWith("00") ? `+${cleaned.slice(2)}` : cleaned;
+
+  if (/^[6-9]\d{9}$/.test(e164)) return `+91${e164}`;
+  if (/^91[6-9]\d{9}$/.test(e164)) return `+${e164}`;
+  if (/^\+[1-9]\d{7,14}$/.test(e164)) return e164;
+
+  throw new AppError("Enter a valid phone number, for example +919876543210.", 400);
+}
+
 function dodoClient(): DodoPayments {
   return new DodoPayments({
     bearerToken: env.DODO_PAYMENTS_API_KEY,
@@ -83,6 +99,7 @@ export class DodoPaymentsService {
     payment_type: PaymentType;
   }> {
     const plan = normalizePlan(customer.plan);
+    const phone = normalizePhoneNumber(customer.phone);
     const productId = productIdFor(plan, paymentType);
     if (!productId) {
       throw new AppError(`The ${paymentType === "subscription" ? "subscription" : "setup"} product for this plan is not configured.`, 503);
@@ -92,7 +109,7 @@ export class DodoPaymentsService {
       business_name: customer.business_name.trim(),
       owner_name: customer.owner_name.trim(),
       email: customer.email.trim().toLowerCase(),
-      phone: customer.phone.trim(),
+      phone,
       industry: customer.industry?.trim() || "general",
       plan,
       payment_type: paymentType,
