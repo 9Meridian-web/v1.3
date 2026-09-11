@@ -11,6 +11,8 @@ import {
 
 import { AuthService } from "../services/authService";
 import { GoogleIdentityService } from "../services/googleIdentityService";
+import jwt from "jsonwebtoken";
+import { env } from "../config/env";
 import { ValidationChain } from "express-validator";
 
 export class AuthController {
@@ -21,7 +23,17 @@ export class AuthController {
         // dashboard tokens continue to be issued only by the owner login flow.
         res.status(200).json({
             success: true,
-            data: { token: req.body.credential, user: identity, exp: identity.exp }
+            data: {
+                // Do not return or persist Google's ID token in browser storage.
+                // This public-site session is deliberately not a tenant API token.
+                token: jwt.sign(
+                    { scope: "website", sub: identity.sub, email: identity.email },
+                    env.JWT_SECRET,
+                    { expiresIn: "1h", audience: "9meridian-website" },
+                ),
+                user: identity,
+                exp: Math.floor(Date.now() / 1000) + 3_600,
+            }
         });
     }
 
