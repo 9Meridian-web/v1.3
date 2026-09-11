@@ -12,6 +12,12 @@ import { env } from "../config/env";
 
 const router = Router();
 
+router.post(
+    "/google",
+    rateLimit({ windowMs: 15 * 60 * 1000, max: env.AUTH_RATE_LIMIT_MAX }),
+    AuthController.google
+);
+
 /*
 |--------------------------------------------------------------------------
 | Register

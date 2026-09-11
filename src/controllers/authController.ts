@@ -10,9 +10,21 @@ import {
 } from "express";
 
 import { AuthService } from "../services/authService";
+import { GoogleIdentityService } from "../services/googleIdentityService";
 import { ValidationChain } from "express-validator";
 
 export class AuthController {
+    static async google(req: Request, res: Response): Promise<void> {
+        const identity = await GoogleIdentityService.verifyCredential(req.body?.credential);
+
+        // The public website uses this verified identity for its own UI. Tenant
+        // dashboard tokens continue to be issued only by the owner login flow.
+        res.status(200).json({
+            success: true,
+            data: { token: req.body.credential, user: identity, exp: identity.exp }
+        });
+    }
+
     /*
     |--------------------------------------------------------------------------
     | Register
